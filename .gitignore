@@ -8,4 +8,4 @@ chromedriver.exe
 .vscode
 
 # output files
-.txt
+*.txt
