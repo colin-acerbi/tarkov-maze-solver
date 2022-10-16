@@ -13,7 +13,7 @@ from random import choice
 
 ARRS_URL = "https://arrs.host"   
 
-INPUT_XPATH = '//*[@id="cmd_input"]'
+INPUT_XPATH = '//input[@id="cmd_input"]'
 TERMINAL_XPATH = '//*[@id="content"]'
 
 WARDEN_USER = "warden"
@@ -42,8 +42,6 @@ def wait_until_available(xpath, timeout=15):
     except:
         print(f"Element at {xpath} not available after {timeout} seconds")
 
-
-# Directions, opposite moves are negative to get opposite moves easily
 def move(move_text):
     if move_text not in move_strings:
         raise AttributeError(f"Invalid move: {move_text}")
@@ -52,14 +50,15 @@ def move(move_text):
     input_field.send_keys(move_text)
     input_field.send_keys(Keys.RETURN)
 
-    sleep(5)
-    response = WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.XPATH, TERMINAL_XPATH))).text.split('\n')[-1]
+    WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, INPUT_XPATH))).click()
+    response = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, TERMINAL_XPATH))).text.split('\n')[-1]
+    print(response)
     return response
 
 def maze_run():
 
     move_coords = {
-        "up":(0, 1),
+        "up": (0, 1),
         "right": (1, 0), 
         "down": (0, -1),
         "left": (-1, 0)
@@ -77,7 +76,7 @@ def maze_run():
 
     running = True
     while running:
-        print(x,y)
+        print(f"(x, y): ({x}, {y}), response: {response}, previous_move: {previous_move}")
         if response not in EXPECTED_OUT:
             print(f"UNEXPECTED OUTPUT FOUND at ({x}, {y}): {response}")
             print(f"History: \n{history}")
@@ -89,29 +88,28 @@ def maze_run():
             history.append(previous_move)
             x += move_coords[previous_move][0]
             y += move_coords[previous_move][1]
-            print(x, y)
             opens.add((x,y))
             # move anywhere that is not the previous move (i.e. don't backtrack)
             next_move = choice([m for m in move_strings if m not in move_opposites[previous_move]])
-            move(next_move)
+            response = move(next_move)
             previous_move = next_move
 
         elif response == "false":
-            wall_x = x + move_coords[previous_move]
-            wall_y = y + move_coords[previous_move]
+            wall_x = x + move_coords[previous_move][0]
+            wall_y = y + move_coords[previous_move][1]
             walls.add((wall_x, wall_y))
 
             # move anywhere that is not the move that just failed (i.e. don't move into a known wall)
             next_move = choice([m for m in move_strings if m not in previous_move])
+            response = move(next_move)
             previous_move = next_move
 
         elif response == "blocked 30s":
             print(f"Waiting at f({x}, {y})")
             sleep(31)
-            move(choice)
             # move anywhere that is not the previous move (i.e. don't backtrack)
             next_move = choice([m for m in move_strings if m not in move_opposites[previous_move]])
-            move(next_move)
+            response = move(next_move)
             previous_move = next_move
 
         elif response == "you died":
@@ -120,11 +118,11 @@ def maze_run():
             running = False
     
         elif response == "start":
-            move(choice([m for m in move_strings]))
+            response = move(choice([m for m in move_strings]))
 
         
 
-     
+    
     with open('MazeRun' + datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p") + '.txt', 'w') as f:
         if unexpected != "Nothing unexpected":
             f.write(f"UNEXPECTED OUTPUT FOUND at ({x}, {y}): {response}")
