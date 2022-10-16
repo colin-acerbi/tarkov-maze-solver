@@ -3,3 +3,6 @@ envs
 
 # selenium stuff
 chromedriver.exe
+
+# vscode
+.vscode

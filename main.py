@@ -1,3 +1,5 @@
+import datetime
+import json
 from multiprocessing.connection import wait
 from xml.dom.minidom import Attr
 from selenium import webdriver
@@ -52,46 +54,91 @@ def move(move_text):
 
     sleep(5)
     response = WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.XPATH, TERMINAL_XPATH))).text.split('\n')[-1]
-    print(response)
     return response
 
 def maze_run():
-    move_coords = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+
+    move_coords = {
+        "up":(0, 1),
+        "right": (1, 0), 
+        "down": (0, -1),
+        "left": (-1, 0)
+        }
+
     history = []
+    opens = set()
+    walls = set()
+    unexpected = "Nothing unexpected"
+
     response = "start"
     # previous move is the text of the move, i.e "left"
     previous_move = "up"
     x, y = 0, 0
-    running = True
 
+    running = True
     while running:
+        print(x,y)
         if response not in EXPECTED_OUT:
             print(f"UNEXPECTED OUTPUT FOUND at ({x}, {y}): {response}")
             print(f"History: \n{history}")
             print('=' * 15)
+            unexpected = response 
             running = False
-            break
+
         elif response == "true":
             history.append(previous_move)
             x += move_coords[previous_move][0]
             y += move_coords[previous_move][1]
+            print(x, y)
+            opens.add((x,y))
             # move anywhere that is not the previous move (i.e. don't backtrack)
-            move(choice([m for m in move_strings if m not in move_opposites[previous_move]]))
+            next_move = choice([m for m in move_strings if m not in move_opposites[previous_move]])
+            move(next_move)
+            previous_move = next_move
+
         elif response == "false":
+            wall_x = x + move_coords[previous_move]
+            wall_y = y + move_coords[previous_move]
+            walls.add((wall_x, wall_y))
+
             # move anywhere that is not the move that just failed (i.e. don't move into a known wall)
-            move(choice([m for m in move_strings if m not in previous_move]))
-        elif response == "start":
-            move(choice([m for m in move_strings]))
+            next_move = choice([m for m in move_strings if m not in previous_move])
+            previous_move = next_move
+
         elif response == "blocked 30s":
             print(f"Waiting at f({x}, {y})")
             sleep(31)
             move(choice)
             # move anywhere that is not the previous move (i.e. don't backtrack)
-            move(choice([m for m in move_strings if m not in move_opposites[previous_move]]))
+            next_move = choice([m for m in move_strings if m not in move_opposites[previous_move]])
+            move(next_move)
+            previous_move = next_move
+
         elif response == "you died":
             print(f"Dead after {len(history)} nodes")
             print('=' * 15)
             running = False
+    
+        elif response == "start":
+            move(choice([m for m in move_strings]))
+
+        
+
+     
+    with open('MazeRun' + datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p") + '.txt', 'w') as f:
+        if unexpected != "Nothing unexpected":
+            f.write(f"UNEXPECTED OUTPUT FOUND at ({x}, {y}): {response}")
+
+        f.write(f"Result: {response}")
+
+        f.write("Move history:\n")
+        json.dump(history, f)
+
+        f.write("Walls: \n")
+        json.dump(list(walls), f)
+
+        f.write("Open Squares: \n")
+        json.dump(list(opens), f)
 
 
 # Login w/ username
