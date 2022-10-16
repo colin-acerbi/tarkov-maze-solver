@@ -7,6 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.keys import Keys
 from time import sleep
+from random import choice
 
 ARRS_URL = "https://arrs.host"   
 
@@ -18,6 +19,14 @@ WARDEN_PASSWORD = "O5SXIMZRO5QXIZLS"
 DECRYPT_STRING = "decrypt /home/warden/private/d900a70d64.inf"
 # start is used to start the maze loop, not a real output
 EXPECTED_OUT = {"start", "true", "false", "you died", "blocked 30s"}
+
+move_opposites = {
+        "up": "down",
+        "left": "right",
+        "right": "left",
+        "down": "up"
+        }
+move_strings = move_opposites.keys()
 
 # Open the ARRS website
 driver = webdriver.Chrome()
@@ -32,45 +41,57 @@ def wait_until_available(xpath, timeout=15):
         print(f"Element at {xpath} not available after {timeout} seconds")
 
 
-# Directions, 1-4 counter clockwise, starting with 1 UP
-# i.e. 1 = up, 2 = right, 3 = down, 4 = left
-
-def move(move_id):
-    if move_id not in range(0,4):
-        raise AttributeError(f"Invalid move id: {move_id}")
-
-    move_text = ["up", "right", "down", "left"]
+# Directions, opposite moves are negative to get opposite moves easily
+def move(move_text):
+    if move_text not in move_strings:
+        raise AttributeError(f"Invalid move: {move_text}")
 
     input_field = wait_until_available(INPUT_XPATH)
-    input_field.send_keys(move_text[move_id])
+    input_field.send_keys(move_text)
     input_field.send_keys(Keys.RETURN)
 
     sleep(5)
-    response = WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.XPATH, TERMINAL_XPATH)))
-    print('=' * 15)
-    print(response.text)
-    print('=' * 15)
-    print(response.text.split('\n')[-1])
+    response = WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.XPATH, TERMINAL_XPATH))).text.split('\n')[-1]
+    print(response)
+    return response
 
 def maze_run():
+    move_coords = [(0, 1), (1, 0), (0, -1), (-1, 0)]
     history = []
-    previous = "start"
-    previous_move = 1
+    response = "start"
+    # previous move is the text of the move, i.e "left"
+    previous_move = "up"
+    x, y = 0, 0
     running = True
+
     while running:
-        if previous not in EXPECTED_OUT:
-            print(f"UNEXPECTED OUTPUT FOUND: {previous}")
+        if response not in EXPECTED_OUT:
+            print(f"UNEXPECTED OUTPUT FOUND at ({x}, {y}): {response}")
             print(f"History: \n{history}")
             print('=' * 15)
             running = False
-        if previous == "you died":
+            break
+        elif response == "true":
+            history.append(previous_move)
+            x += move_coords[previous_move][0]
+            y += move_coords[previous_move][1]
+            # move anywhere that is not the previous move (i.e. don't backtrack)
+            move(choice([m for m in move_strings if m not in move_opposites[previous_move]]))
+        elif response == "false":
+            # move anywhere that is not the move that just failed (i.e. don't move into a known wall)
+            move(choice([m for m in move_strings if m not in previous_move]))
+        elif response == "start":
+            move(choice([m for m in move_strings]))
+        elif response == "blocked 30s":
+            print(f"Waiting at f({x}, {y})")
+            sleep(31)
+            move(choice)
+            # move anywhere that is not the previous move (i.e. don't backtrack)
+            move(choice([m for m in move_strings if m not in move_opposites[previous_move]]))
+        elif response == "you died":
             print(f"Dead after {len(history)} nodes")
             print('=' * 15)
-            Running = False
-        if previous == "true":
-            move(previous_move)
-        if previous == "false":
-            pass
+            running = False
 
 
 # Login w/ username
@@ -88,4 +109,4 @@ input_field = wait_until_available(INPUT_XPATH)
 input_field.send_keys(DECRYPT_STRING)
 input_field.send_keys(Keys.RETURN)
 
-move(1)
+maze_run()
