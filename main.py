@@ -1,3 +1,4 @@
+from re import I
 from time import sleep
 from datetime import datetime
 
@@ -112,7 +113,7 @@ def maze_run():
             print(f"History: \n{history}")
             print('=' * 15)
             # get a bigger response from the terminal since a key or link might be multiple lines
-            large_response = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, TERMINAL_XPATH))).text.split('\n').slice(-20)
+            large_response = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, TERMINAL_XPATH))).text.split('\n')[-20:]
             unexpected = large_response
             running = False
 
@@ -136,7 +137,7 @@ def maze_run():
             previous_move = next_move
 
         elif response == "blocked 30s":
-            print(f"Waiting at f({x}, {y})")
+            print(f"Waiting at square ({x}, {y})")
             sleep(31)
             
             x += move_coords[previous_move][0]
@@ -150,14 +151,12 @@ def maze_run():
         elif response == "you died":
             x += move_coords[previous_move][0]
             y += move_coords[previous_move][1]
-
             print(f"Dead after {len(history)} nodes")
             print('=' * 15)
             running = False
         
         elif response == "teleported":
             teleported = True
-
             x += move_coords[previous_move][0]
             y += move_coords[previous_move][1]
             teleports.add((x,y))
@@ -183,8 +182,9 @@ def maze_run():
 
         if unexpected:
             f.write(f"Last 20 lines before unexpected response:\n")
-            dump(large_response, indent=2)
-        
+            dump(large_response, f, indent=2)
+            f.write("\n\n")
+
         f.write("Move history:\n")
         dump(history, f)
         f.write("\n\n")
