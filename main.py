@@ -23,14 +23,7 @@ WARDEN_PASSWORD = "O5SXIMZRO5QXIZLS"
 DECRYPT_STRING = "decrypt /home/warden/private/d900a70d64.inf"
 # start is used to start the maze loop, not a real output
 EXPECTED_OUT = {"start", "true", "false", "you died", "blocked 30s", "teleported"}
-
-move_opposites = {
-        "up": "down",
-        "left": "right",
-        "right": "left",
-        "down": "up"
-        }
-move_strings = move_opposites.keys()
+move_strings = ["up", "right", "down", "left"]
 
 # Open the ARRS website
 driver = webdriver.Chrome()
@@ -45,6 +38,7 @@ def wait_until_available(xpath, timeout=15):
         print(f"Element at {xpath} not available after {timeout} seconds")
 
 def move(move_text):
+    
     if move_text not in move_strings:
         raise AttributeError(f"Invalid move: {move_text}")
 
@@ -96,7 +90,7 @@ def maze_run():
     history = []
 
     opens = set()
-    opens.add(0,0)
+    opens.add((0,0))
 
     walls = set()
     blocks = set()
@@ -170,9 +164,11 @@ def maze_run():
             teleports.add((x,y))
 
             running = False
-    
+
         elif response == "start":
-            response = move(choice([m for m in move_strings]))
+            next_move = choice(move_strings)
+            response = move(next_move)
+            previous_move = next_move
 
     if unexpected:
         result_prefix = "Unexpected"

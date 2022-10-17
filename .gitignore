@@ -9,3 +9,4 @@ chromedriver.exe
 
 # output files
 *.txt
+!requirements.txt
