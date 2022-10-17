@@ -18,10 +18,17 @@ from PIL import Image
 
 import PIL.ImageGrab
 
+move_strings = ["up", "right", "down", "left"]
+
 MOVES = []
 RANDOM = False
 with open("moves.txt", "r") as f:
-    MOVES += str(f.readline()).split()
+    tmp = str(f.readlines()).split()
+    for i in tmp:
+        # print(i[:-4])
+        if i[:-4] in move_strings:
+            MOVES += [i[:-4]]
+            
 try:
     os.mkdir('./img')
 except:
@@ -66,6 +73,7 @@ def wait_until_available(xpath, timeout=15):
         print(f"Element at {xpath} not available after {timeout} seconds")
 
 def move(move_text):
+    move_strings = ["up", "right", "down", "left"]
     
     if move_text not in move_strings:
         raise AttributeError(f"Invalid move: {move_text}")
