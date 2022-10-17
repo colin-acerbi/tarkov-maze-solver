@@ -1,4 +1,3 @@
-from re import I
 from time import sleep
 from datetime import datetime
 
@@ -11,7 +10,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-
 
 
 ARRS_URL = "https://arrs.host"   
@@ -132,7 +130,7 @@ def maze_run():
             wall_y = y + move_coords[previous_move][1]
             walls.add((wall_x, wall_y))
 
-            next_move = next_move = get_preferred_move(x, y, opens, walls, blocks)
+            next_move = get_preferred_move(x, y, opens, walls, blocks)
             response = move(next_move)
             previous_move = next_move
 
