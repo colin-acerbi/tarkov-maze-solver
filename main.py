@@ -26,8 +26,10 @@ with open("moves.txt", "r") as f:
     tmp = str(f.readlines()).split()
     for i in tmp:
         # print(i[:-4])
-        if i[:-4] in move_strings:
+        if i[:-4] in move_strings: #encoding things
             MOVES += [i[:-4]]
+        elif i in move_strings:
+            MOVES += [i]
             
 try:
     os.mkdir('./img')
