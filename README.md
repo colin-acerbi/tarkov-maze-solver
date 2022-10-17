@@ -1,6 +1,4 @@
-# Project Title
-
-Tarkov ARG Maze Solver
+# Tarkov ARG Maze Solver
 
 ## Description
 This script uses Selenium to search the Escape From Tarkov arrs.host ARG maze in an attempt to find any hints or encryption keys.
