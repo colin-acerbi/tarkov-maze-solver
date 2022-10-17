@@ -111,7 +111,9 @@ def maze_run():
             print(f"UNEXPECTED OUTPUT FOUND at ({x}, {y}): {response}")
             print(f"History: \n{history}")
             print('=' * 15)
-            unexpected = response 
+            # get a bigger response from the terminal since a key or link might be multiple lines
+            large_response = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, TERMINAL_XPATH))).text.split('\n').slice(-20)
+            unexpected = large_response
             running = False
 
         elif response == "true":
@@ -120,7 +122,6 @@ def maze_run():
             y += move_coords[previous_move][1]
             opens.add((x,y))
 
-            # move anywhere that is not the previous move (i.e. don't backtrack)
             next_move = get_preferred_move(x, y, opens, walls, blocks)
             response = move(next_move)
             previous_move = next_move
@@ -130,7 +131,6 @@ def maze_run():
             wall_y = y + move_coords[previous_move][1]
             walls.add((wall_x, wall_y))
 
-            # move anywhere that is not the move that just failed (i.e. don't move into a known wall)
             next_move = next_move = get_preferred_move(x, y, opens, walls, blocks)
             response = move(next_move)
             previous_move = next_move
@@ -143,7 +143,6 @@ def maze_run():
             y += move_coords[previous_move][1]
             blocks.add((x, y))
 
-            # move anywhere that is not the previous move (i.e. don't backtrack)
             next_move = get_preferred_move(x, y, opens, walls, blocks)
             response = move(next_move)
             previous_move = next_move
@@ -180,8 +179,12 @@ def maze_run():
     with open(result_prefix + '_MazeRun' + datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p") + '.txt', 'w') as f:
         f.write(f"{result_prefix} at ({x}, {y}): {response}\n")
     
-        f.write(f"Result: {response}\n")
+        f.write(f"Result: {result_prefix}\n")
 
+        if unexpected:
+            f.write(f"Last 20 lines before unexpected response:\n")
+            dump(large_response, indent=2)
+        
         f.write("Move history:\n")
         dump(history, f)
         f.write("\n\n")
