@@ -21,10 +21,10 @@ WARDEN_USER = "warden"
 WARDEN_PASSWORD = "O5SXIMZRO5QXIZLS"
 DECRYPT_STRING = "decrypt /home/warden/private/d900a70d64.inf"
 # start is used to start the maze loop, not a real output
-EXPECTED_OUT = {"start", "true", "false", "you died", "blocked 30s", "teleported"}
+EXPECTED_OUT = {"start", "true", "false", "you died", "blocked 30s", "teleported", "disconnected"}
 move_strings = ["up", "right", "down", "left"]
 
-# Open the ARRS website
+# open the ARRS website
 driver = webdriver.Chrome()
 driver.get(ARRS_URL)
 
@@ -135,6 +135,7 @@ def maze_run():
             previous_move = next_move
 
         elif response == "blocked 30s":
+            history.append(previous_move)
             print(f"Waiting at square ({x}, {y})")
             sleep(31)
             
@@ -147,6 +148,7 @@ def maze_run():
             previous_move = next_move
 
         elif response == "you died":
+            history.append(previous_move)
             x += move_coords[previous_move][0]
             y += move_coords[previous_move][1]
             print(f"Dead after {len(history)} nodes")
@@ -158,13 +160,19 @@ def maze_run():
             x += move_coords[previous_move][0]
             y += move_coords[previous_move][1]
             teleports.add((x,y))
-
+            print('=' * 15)
             running = False
 
         elif response == "start":
             next_move = choice(move_strings)
             response = move(next_move)
             previous_move = next_move
+        
+        elif response == "disconnected":
+            running = False
+            sleep(20)
+            # need to sign back in since disconnected log you out
+            login_flow()
 
     if unexpected:
         result_prefix = "Unexpected"
@@ -206,21 +214,24 @@ def maze_run():
         f.write("Teleport Squares (if applicable): \n")
         dump(list(teleports), f)
 
+def login_flow():
+    # Login w/ username
+    input_field = wait_until_available(INPUT_XPATH)
+    input_field.send_keys(f"login {WARDEN_USER}")
+    input_field.send_keys(Keys.RETURN)
 
-# Login w/ username
-input_field = wait_until_available(INPUT_XPATH)
-input_field.send_keys(f"login {WARDEN_USER}")
-input_field.send_keys(Keys.RETURN)
+    # Input warden password
+    input_field = wait_until_available(INPUT_XPATH)
+    input_field.send_keys(WARDEN_PASSWORD)
+    input_field.send_keys(Keys.RETURN)
 
-# Input warden password
-input_field = wait_until_available(INPUT_XPATH)
-input_field.send_keys(WARDEN_PASSWORD)
-input_field.send_keys(Keys.RETURN)
+    # Open the maze
+    input_field = wait_until_available(INPUT_XPATH)
+    input_field.send_keys(DECRYPT_STRING)
+    input_field.send_keys(Keys.RETURN)
 
-# Open the maze
-input_field = wait_until_available(INPUT_XPATH)
-input_field.send_keys(DECRYPT_STRING)
-input_field.send_keys(Keys.RETURN)
+
+login_flow()
 
 searching = True
 while searching:
