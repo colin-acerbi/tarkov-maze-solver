@@ -204,7 +204,7 @@ def maze_run():
         f.write("\n\n") 
 
         f.write("Block (Delay) Squares: \n")
-        dump(list(opens), f)
+        dump(list(blocks), f)
         f.write("\n\n")
 
         f.write("Kill Squares (if applicable): \n")
