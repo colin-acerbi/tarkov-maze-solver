@@ -1,15 +1,53 @@
+
 from time import sleep
 from datetime import datetime
 
 from json import dump
 
 from random import choice
-
+import os
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+
+import numpy as np
+import scipy.misc as smp
+from PIL import Image
+
+import PIL.ImageGrab
+
+move_strings = ["up", "right", "down", "left"]
+
+MOVES = []
+RANDOM = False
+with open("moves.txt", "r") as f:
+    tmp = str(f.readlines()).split()
+    for i in tmp:
+        # print(i[:-4])
+        if i[:-4] in move_strings: #encoding things
+            MOVES += [i[:-4]]
+        elif i in move_strings:
+            MOVES += [i]
+            
+try:
+    os.mkdir('./img')
+except:
+    pass
+print(MOVES)
+CUBE_SIZE = 10
+WIDTH = 4000
+HEIGHT = 4000
+# CENTERX, CENTERY = int(WIDTH / 2), int(HEIGHT/ 2)
+CENTERX, CENTERY = int(WIDTH / 2), int(3000)
+
+
+def draw_cube(data,x,y,color):
+    posx, posy = CENTERX + x * CUBE_SIZE, CENTERY - y * CUBE_SIZE
+    for i in range(CUBE_SIZE):
+        for j in range(CUBE_SIZE):
+            data[posy+i,posx+j] = color     
 
 
 ARRS_URL = "https://arrs.host"   
@@ -21,10 +59,10 @@ WARDEN_USER = "warden"
 WARDEN_PASSWORD = "O5SXIMZRO5QXIZLS"
 DECRYPT_STRING = "decrypt /home/warden/private/d900a70d64.inf"
 # start is used to start the maze loop, not a real output
-EXPECTED_OUT = {"start", "true", "false", "you died", "blocked 30s", "teleported", "disconnected"}
+EXPECTED_OUT = {"start", "true", "false", "you died", "blocked 30s", "teleported"}
 move_strings = ["up", "right", "down", "left"]
 
-# open the ARRS website
+# Open the ARRS website
 driver = webdriver.Chrome()
 driver.get(ARRS_URL)
 
@@ -37,6 +75,7 @@ def wait_until_available(xpath, timeout=15):
         print(f"Element at {xpath} not available after {timeout} seconds")
 
 def move(move_text):
+    move_strings = ["up", "right", "down", "left"]
     
     if move_text not in move_strings:
         raise AttributeError(f"Invalid move: {move_text}")
@@ -100,11 +139,11 @@ def maze_run():
     teleported = False
     response = "start"
     # previous move is the text of the move, i.e "left"
-    previous_move = "up"
+    previous_move = MOVES[0]
     x, y = 0, 0
 
     running = True
-    while running:
+    while running and RANDOM:
         print(f"(x, y): ({x}, {y}), response: {response}, previous_move: {previous_move}")
         if response not in EXPECTED_OUT:
             print(f"UNEXPECTED OUTPUT FOUND at ({x}, {y}): {response}")
@@ -135,7 +174,6 @@ def maze_run():
             previous_move = next_move
 
         elif response == "blocked 30s":
-            history.append(previous_move)
             print(f"Waiting at square ({x}, {y})")
             sleep(31)
             
@@ -148,9 +186,9 @@ def maze_run():
             previous_move = next_move
 
         elif response == "you died":
-            history.append(previous_move)
             x += move_coords[previous_move][0]
             y += move_coords[previous_move][1]
+            kills.add((x,y))
             print(f"Dead after {len(history)} nodes")
             print('=' * 15)
             running = False
@@ -160,19 +198,90 @@ def maze_run():
             x += move_coords[previous_move][0]
             y += move_coords[previous_move][1]
             teleports.add((x,y))
-            print('=' * 15)
+
             running = False
 
         elif response == "start":
             next_move = choice(move_strings)
             response = move(next_move)
             previous_move = next_move
-        
-        elif response == "disconnected":
+
+    index = 0
+    while running and not RANDOM:
+        print(f"(x, y): ({x}, {y}), response: {response}, previous_move: {previous_move}, index:{index}")
+        if response not in EXPECTED_OUT:
+            print(f"UNEXPECTED OUTPUT FOUND at ({x}, {y}): {response}")
+            print(f"History: \n{history}")
+            print('=' * 15)
+            # get a bigger response from the terminal since a key or link might be multiple lines
+            large_response = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, TERMINAL_XPATH))).text.split('\n')[-20:]
+            unexpected = large_response
             running = False
-            sleep(20)
-            # need to sign back in since disconnected log you out
-            login_flow()
+
+        elif response == "true":
+            history.append(previous_move)
+            index += 1
+            x += move_coords[previous_move][0]
+            y += move_coords[previous_move][1]
+            opens.add((x,y))
+            if index >= len(MOVES):
+                running = False
+                break
+
+            next_move = MOVES[index]
+            response = move(next_move)
+            previous_move = next_move
+
+        elif response == "false":
+            wall_x = x + move_coords[previous_move][0]
+            wall_y = y + move_coords[previous_move][1]
+            walls.add((wall_x, wall_y))
+            index += 1
+            if index >= len(MOVES):
+                running = False
+                break
+            
+            next_move = MOVES[index]
+            response = move(next_move)
+            previous_move = next_move
+
+        elif response == "blocked 30s":
+            print(f"Waiting at square ({x}, {y})")
+            sleep(31)
+            
+            x += move_coords[previous_move][0]
+            y += move_coords[previous_move][1]
+            blocks.add((x, y))
+
+            index += 1
+            if index >= len(MOVES):
+                running = False
+                break
+            
+            next_move = MOVES[index]
+            response = move(next_move)
+            previous_move = next_move
+
+        elif response == "you died":
+            x += move_coords[previous_move][0]
+            y += move_coords[previous_move][1]
+            kills.add((x,y))
+            print(f"Dead after {len(history)} nodes")
+            print('=' * 15)
+            running = False
+        
+        elif response == "teleported":
+            teleported = True
+            x += move_coords[previous_move][0]
+            y += move_coords[previous_move][1]
+            teleports.add((x,y))
+
+            running = False
+
+        elif response == "start":
+            next_move = MOVES[index]
+            response = move(next_move)
+            previous_move = next_move
 
     if unexpected:
         result_prefix = "Unexpected"
@@ -213,26 +322,45 @@ def maze_run():
 
         f.write("Teleport Squares (if applicable): \n")
         dump(list(teleports), f)
+    
+    data = np.zeros( (HEIGHT,WIDTH,3), dtype=np.uint8 )
+    for i in range(HEIGHT):
+        for j in range(WIDTH):
+            data[i,j] = [255,255,255]
+    
+    for i in walls:
+        draw_cube(data, i[1], i[0], [255,0,0])
+    for i in opens:
+        draw_cube(data, i[1], i[0], [0,255,0])
+    draw_cube(data,0,0,[0,0,255])
+    img = Image.fromarray( data )       # Create a PIL image
+    img.save(f'./img/temp{datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")}.png', "PNG") # View in default viewer
 
-def login_flow():
-    # Login w/ username
-    input_field = wait_until_available(INPUT_XPATH)
-    input_field.send_keys(f"login {WARDEN_USER}")
-    input_field.send_keys(Keys.RETURN)
-
-    # Input warden password
-    input_field = wait_until_available(INPUT_XPATH)
-    input_field.send_keys(WARDEN_PASSWORD)
-    input_field.send_keys(Keys.RETURN)
-
-    # Open the maze
-    input_field = wait_until_available(INPUT_XPATH)
-    input_field.send_keys(DECRYPT_STRING)
-    input_field.send_keys(Keys.RETURN)
+        
 
 
-login_flow()
+# Login w/ username
+input_field = wait_until_available(INPUT_XPATH)
+input_field.send_keys(f"login {WARDEN_USER}")
+input_field.send_keys(Keys.RETURN)
+
+# Input warden password
+input_field = wait_until_available(INPUT_XPATH)
+input_field.send_keys(WARDEN_PASSWORD)
+input_field.send_keys(Keys.RETURN)
+
+# Open the maze
+input_field = wait_until_available(INPUT_XPATH)
+input_field.send_keys(DECRYPT_STRING)
+input_field.send_keys(Keys.RETURN)
 
 searching = True
-while searching:
+if RANDOM:
+    while searching:
+        maze_run()
+else:
     maze_run()
+    answer = "n"
+    while answer != "y":
+        answer = input("Exit? [y,n]")
+    

@@ -1,0 +1,812 @@
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # exit
+Process exited (1). Decryption process aborted.
+[ warden@arrs.host : ~ ] # decrypt /home/warden/private/d900a70d64.inf
+Starting decrypting file...
+Use 'up' | 'down' | 'left' | 'right' commands to step-by-step decrypting file chunks. Use 'exit' to abort decryption process
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+blocked 30s
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+blocked 30s
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # left
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # down
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
+true
+[ warden@arrs.host : decrypt d900a70d64.inf ] # right
+false
+[ warden@arrs.host : decrypt d900a70d64.inf ] # up
