@@ -40,7 +40,3 @@ ButterflyEnthusiast
 ## Acknowledgments
 
 Thanks to the NoiceGuy SoS for help and suggestions
-
-## УПэДэ / UPD
-
-В файле moves пишем нужные для прогона команды. Прогоняемые команды будут сохраняться в пнгшник в папке img. Если что-то не робит - напишите в дисс
